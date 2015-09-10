@@ -1,0 +1,53 @@
+lat-long not found: use OGLE for default
+lat-long not found: use OGLE for default
+lat-long not found: use OGLE for default
+####### Event: OGLE-2015-BLG-0763 #######
+RA (J2000): 17:32:23.41 263.097541667
+Dec (J2000): -29:18:09.7 -29.3026944444
+nobs =  5
+Data files:
+['ogle', 'spitzer', 'kmt1', 'kmt2', 'kmt3']
+[False  True False False False]
+['I', 'L', 'I', 'I', 'I']
+['../data/phot.dat', '../data/spitzer3.mag', '../data/0648_CTIO_I.dophot', '../data/0648_SAAO_I.dophot', '../data/0648_SSO_I.dophot']
+Limb-darkening parameters (i,v,h,l):  [ 0.44  0.72  0.26  0.  ]
+Reference parameters:  6000.0 8000.0 7190.0 7180.0 False
+Fitting parameters: 
+['t0' 'u0' 'te' 'rho' 'pien' 'piee']
+7189.0295 0.0702 32.689 0.0674 -0.023 0.016
+Flux parameters: 
+['fs0' 'fb0' 'fs1' 'fb1' 'fs2' 'fb2' 'fs3' 'fb3' 'fs4' 'fb4']
+[  1.97500714  -0.08922394  53.61717473 -20.43380421   6.15940549
+  -0.37033557   6.20511008  -0.42246818   6.20759378  -0.49442284]
+use color information?  False 
+Error factors:  [ 1.4   7.05  1.12  1.    1.26]
+##########################
+---------Begin reading data...---------
+Read in data file:  ../data/phot.dat False 0.0
+Read in data file:  ../data/spitzer3.mag True 0.0
+Read in data file:  ../data/0648_CTIO_I.dophot False 0.0
+Read in data file:  ../data/0648_SAAO_I.dophot False 0.0
+Read in data file:  ../data/0648_SSO_I.dophot False 0.0
+---------Reading data finished----------
+Free parameters:
+['t0' 'u0' 'te' 'rho' 'pien' 'piee']
+[  7.18902950e+03   7.02000000e-02   3.26890000e+01   6.74000000e-02
+  -2.30000000e-02   1.60000000e-02]
+Fixed parameters:
+['fs0' 'fb0' 'fs1' 'fb1' 'fs2' 'fb2' 'fs3' 'fb3' 'fs4' 'fb4']
+[  1.97500714  -0.08922394  53.61717473 -20.43380421   6.15940549
+  -0.37033557   6.20511008  -0.42246818   6.20759378  -0.49442284]
+------ Initialization finished ------
+best parameters: 
+['t0' 'u0' 'te' 'rho' 'pien' 'piee']
+['7189.0365', '0.0704', '32.3459', '0.0670', '-0.0232', '0.0156']
+['7189.0366', '0.0705', '32.3493', '0.0674', '-0.0233', '0.0156']
+['0.0059', '0.0007', '0.2246', '0.0007', '0.0004', '0.0003']
+MCMC finished (s):  481.14  s
+[[  2.02209484  -0.13577155]
+ [ 54.27061161 -19.03057875]
+ [  6.30131562  -0.50074054]
+ [  6.34463402  -0.54895049]
+ [  6.34800324  -0.62157425]]
+Total chisq =  946.867419095
+['388.02/362', '142.93/141', '213.57/214', '144.09/135', '58.27/58']

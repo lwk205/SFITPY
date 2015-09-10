@@ -1,0 +1,220 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module getmag ! in 
+    interface  ! in :getmag
+        subroutine getbinp(magtot,am,xi,yi,xsi,eta,q,b,nsol) ! in :getmag:bincode/getbinp.f
+            real*8 :: magtot
+            real*8 dimension(5) :: am
+            real*8 dimension(5) :: xi
+            real*8 dimension(5) :: yi
+            real*8 :: xsi
+            real*8 :: eta
+            real*8 :: q
+            real*8 :: b
+            integer*4 :: nsol
+        end subroutine getbinp
+        subroutine conj(zb,z) ! in :getmag:bincode/getbinp.f
+            complex*16 :: zb
+            complex*16 :: z
+        end subroutine conj
+        subroutine lenseq(zetap,z,z1,z2,m1,m2) ! in :getmag:bincode/getbinp.f
+            complex*16 :: zetap
+            complex*16 :: z
+            complex*16 :: z1
+            complex*16 :: z2
+            real*8 :: m1
+            real*8 :: m2
+        end subroutine lenseq
+        subroutine zroots(a,m,roots,polish) ! in :getmag:bincode/getbinp.f
+            complex*16 dimension(m + 1) :: a
+            integer*4, optional,check((len(a)-1)>=m),depend(a) :: m=(len(a)-1)
+            complex*16 dimension(m),depend(m) :: roots
+            logical :: polish
+        end subroutine zroots
+        subroutine laguer(ad,m,x,its) ! in :getmag:bincode/getbinp.f
+            complex*16 dimension(15) :: ad
+            integer*4 :: m
+            complex*16 :: x
+            integer*4 :: its
+        end subroutine laguer
+        subroutine getmag_jin(magbps0,magbfs,xs,ys,b,q,rhos,gamma_lld,errorflag) ! in :getmag:bincode/jinsubs.f
+            double precision intent(out) :: magbps0
+            double precision intent(out) :: magbfs
+            double precision intent(in) :: xs
+            double precision intent(in) :: ys
+            double precision intent(in) :: b
+            double precision intent(in) :: q
+            double precision intent(in) :: rhos
+            double precision intent(in) :: gamma_lld
+            integer intent(out) :: errorflag
+        end subroutine getmag_jin
+        subroutine rings(r,rhos,n) ! in :getmag:bincode/jinsubs.f
+            double precision dimension(n) :: r
+            double precision :: rhos
+            integer, optional,check(len(r)>=n),depend(r) :: n=len(r)
+        end subroutine rings
+        subroutine surfb(s,r,n,gamma) ! in :getmag:bincode/jinsubs.f
+            double precision dimension(n) :: s
+            double precision dimension(n),depend(n) :: r
+            integer, optional,check(len(s)>=n),depend(s) :: n=len(s)
+            double precision :: gamma
+        end subroutine surfb
+        subroutine getampfb(magfs,magpt,xsi0,eta0,b,q,rhostar,rho0,err) ! in :getmag:bincode/jinsubs.f
+            double precision :: magfs
+            double precision :: magpt
+            double precision :: xsi0
+            double precision :: eta0
+            double precision :: b
+            double precision :: q
+            double precision :: rhostar
+            double precision :: rho0
+            integer :: err
+        end subroutine getampfb
+        subroutine finecross(theta,thetaadd,mstep,z,zeta,parity,sols,b,q,zcen,rhostar,nsol0,mcrs,nstep) ! in :getmag:bincode/jinsubs.f
+            double precision :: theta
+            double precision :: thetaadd
+            integer :: mstep
+            complex*16 dimension(nstep) :: z
+            complex*16 dimension(nstep,5),depend(nstep) :: zeta
+            integer dimension(nstep,5),depend(nstep) :: parity
+            integer dimension(nstep),depend(nstep) :: sols
+            double precision :: b
+            double precision :: q
+            complex*16 :: zcen
+            double precision :: rhostar
+            integer :: nsol0
+            integer :: mcrs
+            integer, optional,check(len(z)>=nstep),depend(z) :: nstep=len(z)
+        end subroutine finecross
+        subroutine area1(ar,bound,num,nmt) ! in :getmag:bincode/jinsubs.f
+            double precision :: ar
+            complex*16 dimension(nmt) :: bound
+            integer :: num
+            integer, optional,check(len(bound)>=nmt),depend(bound) :: nmt=len(bound)
+        end subroutine area1
+        subroutine cmpexp(cexp,theta) ! in :getmag:bincode/jinsubs.f
+            complex*16 :: cexp
+            double precision :: theta
+        end subroutine cmpexp
+        subroutine conj_jin(zb,z) ! in :getmag:bincode/jinsubs.f
+            complex*16 :: zb
+            complex*16 :: z
+        end subroutine conj_jin
+        subroutine lenseq_jin(zetap,z,z1,z2,m1,m2) ! in :getmag:bincode/jinsubs.f
+            complex*16 :: zetap
+            complex*16 :: z
+            complex*16 :: z1
+            complex*16 :: z2
+            double precision :: m1
+            double precision :: m2
+        end subroutine lenseq_jin
+        subroutine solchk(derr,z,c,m) ! in :getmag:bincode/jinsubs.f
+            double precision :: derr
+            complex*16 :: z
+            complex*16 dimension(m + 1) :: c
+            integer, optional,check((len(c)-1)>=m),depend(c) :: m=(len(c)-1)
+        end subroutine solchk
+        subroutine getim0(xi,yi,am,nsol,b,q,xsi,eta,magtot) ! in :getmag:bincode/jinsubs.f
+            double precision dimension(5) :: xi
+            double precision dimension(5) :: yi
+            double precision dimension(5) :: am
+            integer :: nsol
+            double precision :: b
+            double precision :: q
+            double precision :: xsi
+            double precision :: eta
+            double precision :: magtot
+        end subroutine getim0
+        subroutine getim2(xi,yi,am,nsol,b,q,xsi,eta,magtot) ! in :getmag:bincode/jinsubs.f
+            double precision dimension(5) :: xi
+            double precision dimension(5) :: yi
+            double precision dimension(5) :: am
+            integer :: nsol
+            double precision :: b
+            double precision :: q
+            double precision :: xsi
+            double precision :: eta
+            double precision :: magtot
+        end subroutine getim2
+        subroutine getim3(xii,yii,amm,nsol,b,q,xsi,eta,magtot) ! in :getmag:bincode/jinsubs.f
+            double precision dimension(5) :: xii
+            double precision dimension(5) :: yii
+            double precision dimension(5) :: amm
+            integer :: nsol
+            double precision :: b
+            double precision :: q
+            double precision :: xsi
+            double precision :: eta
+            double precision :: magtot
+        end subroutine getim3
+        subroutine getmagf(magfs,magpt,xsi0,eta0,rhostar,b,q) ! in :getmag:bincode/jinsubs.f
+            double precision :: magfs
+            double precision :: magpt
+            double precision :: xsi0
+            double precision :: eta0
+            double precision :: rhostar
+            double precision :: b
+            double precision :: q
+        end subroutine getmagf
+        subroutine zroots_jin(a,m,roots,polish) ! in :getmag:bincode/jinsubs.f
+            complex*16 dimension(m + 1) :: a
+            integer, optional,check((len(a)-1)>=m),depend(a) :: m=(len(a)-1)
+            complex*16 dimension(m),depend(m) :: roots
+            logical :: polish
+        end subroutine zroots_jin
+        subroutine laguer_jin(ad,m,x,its) ! in :getmag:bincode/jinsubs.f
+            complex*16 dimension(15) :: ad
+            integer :: m
+            complex*16 :: x
+            integer :: its
+        end subroutine laguer_jin
+        function sind(x) ! in :getmag:bincode/jinsubs.f
+            double precision :: x
+            double precision :: sind
+        end function sind
+        function cosd(x) ! in :getmag:bincode/jinsubs.f
+            double precision :: x
+            double precision :: cosd
+        end function cosd
+        function sgn(x) ! in :getmag:bincode/jinsubs.f
+            double precision :: x
+            double precision :: sgn
+        end function sgn
+        subroutine getampfs(ampfs,amppt,ux0,uy0,rho) ! in :getmag:bincode/jinsubs.f
+            double precision :: ampfs
+            double precision :: amppt
+            double precision :: ux0
+            double precision :: uy0
+            double precision :: rho
+        end subroutine getampfs
+        subroutine stoke(x,y,n,area) ! in :getmag:bincode/jinsubs.f
+            double precision dimension(n) :: x
+            double precision dimension(n),depend(n) :: y
+            integer, optional,check(len(x)>=n),depend(x) :: n=len(x)
+            double precision :: area
+        end subroutine stoke
+        subroutine taylor_2(qmag,x,y,q,d,gamma,rho,ntaylor) ! in :getmag:bincode/getmag.f
+            real*8 intent(out) :: qmag
+            real*8 intent(in) :: x
+            real*8 intent(in) :: y
+            real*8 intent(in) :: q
+            real*8 intent(in) :: d
+            real*8 intent(in) :: gamma
+            real*8 intent(in) :: rho
+            integer intent(in) :: ntaylor
+        end subroutine taylor_2
+        subroutine getquad(qmag1,x0,y0,q,b,rho,nrot) ! in :getmag:bincode/getmag.f
+            real*8 :: qmag1
+            real*8 :: x0
+            real*8 :: y0
+            real*8 :: q
+            real*8 :: b
+            real*8 :: rho
+            integer :: nrot
+        end subroutine getquad
+    end interface 
+end python module getmag
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/

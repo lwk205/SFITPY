@@ -1,0 +1,389 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module tricode/wei ! in 
+    interface  ! in :tricode/wei
+        subroutine cmplx_roots_n(roots,first_n_minus_2_roots_order_changed,poly,polish_only) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: roots
+            logical :: first_n_minus_2_roots_order_changed
+            complex*16 :: poly
+            logical :: polish_only
+        end subroutine cmplx_roots_n
+        subroutine sort_n_points_by_separation(points) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: points
+        end subroutine sort_n_points_by_separation
+        subroutine sort_n_points_by_separation_i(sorted_points,points) ! in :tricode/wei:tricode/roots10.f
+            integer :: sorted_points
+            complex*16 :: points
+        end subroutine sort_n_points_by_separation_i
+        subroutine find_2_closest_from_n(i1,i2,d2min,points) ! in :tricode/wei:tricode/roots10.f
+            integer :: i1
+            integer :: i2
+            real*8 :: d2min
+            complex*16 :: points
+        end subroutine find_2_closest_from_n
+        subroutine cmplx_laguerre(poly,degree,root,iter,success) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: poly
+            integer :: degree
+            complex*16 :: root
+            integer :: iter
+            logical :: success
+        end subroutine cmplx_laguerre
+        subroutine cmplx_newton_spec(poly,degree,root,iter,success) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: poly
+            integer :: degree
+            complex*16 :: root
+            integer :: iter
+            logical :: success
+        end subroutine cmplx_newton_spec
+        subroutine cmplx_laguerre2newton(poly,degree,root,iter,success,starting_mode) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: poly
+            integer :: degree
+            complex*16 :: root
+            integer :: iter
+            logical :: success
+            integer :: starting_mode
+        end subroutine cmplx_laguerre2newton
+        subroutine solve_quadratic_eq(x0,x1,poly) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: x0
+            complex*16 :: x1
+            complex*16 :: poly
+        end subroutine solve_quadratic_eq
+        subroutine solve_cubic_eq(x0,x1,x2,poly) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: x0
+            complex*16 :: x1
+            complex*16 :: x2
+            complex*16 :: poly
+        end subroutine solve_cubic_eq
+        subroutine divide_poly_1(polyout,remainder,p,polyin,degree) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: polyout
+            complex*16 :: remainder
+            complex*16 :: p
+            complex*16 :: polyin
+            integer :: degree
+        end subroutine divide_poly_1
+        function eval_poly(x,poly,degree,errk) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: x
+            complex*16 :: poly
+            integer :: degree
+            real*8 :: errk
+            complex*16 :: eval_poly
+        end function eval_poly
+        subroutine multiply_poly_1(polyout,p,polyin,degree) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: polyout
+            complex*16 :: p
+            complex*16 :: polyin
+            integer :: degree
+        end subroutine multiply_poly_1
+        subroutine create_poly_from_roots(poly,degree,a,roots) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: poly
+            integer :: degree
+            complex*16 :: a
+            complex*16 :: roots
+        end subroutine create_poly_from_roots
+        subroutine cmplx_laguerre_wrapper(poly,degree,root,iter,success) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: poly
+            integer :: degree
+            complex*16 :: root
+            integer :: iter
+            logical :: success
+        end subroutine cmplx_laguerre_wrapper
+        subroutine cmplx_newton__spec_wrapper(poly,degree,root,iter,success) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: poly
+            integer :: degree
+            complex*16 :: root
+            integer :: iter
+            logical :: success
+        end subroutine cmplx_newton__spec_wrapper
+        subroutine cmplx_laguerre2newton_wrapper(poly,degree,root,iter,success,starting_mode) ! in :tricode/wei:tricode/roots10.f
+            complex*16 :: poly
+            integer :: degree
+            complex*16 :: root
+            integer :: iter
+            logical :: success
+            integer :: starting_mode
+        end subroutine cmplx_laguerre2newton_wrapper
+        subroutine getimt(xi,yi,am,nsol,da,db,phi,ma,mb,xs,ys,magtot,zr) ! in :tricode/wei:tricode/getimt2.f
+            double precision dimension(10) :: xi
+            double precision dimension(10) :: yi
+            double precision dimension(10) :: am
+            integer :: nsol
+            double precision :: da
+            double precision :: db
+            double precision :: phi
+            double precision :: ma
+            double precision :: mb
+            double precision :: xs
+            double precision :: ys
+            double precision :: magtot
+            complex*16 dimension(10) :: zr
+        end subroutine getimt
+        subroutine dmag(dm,z) ! in :tricode/wei:tricode/getimt2.f
+            double precision :: dm
+            complex*16 :: z
+        end subroutine dmag
+        subroutine conj3(zb,z) ! in :tricode/wei:tricode/getimt2.f
+            complex*16 :: zb
+            complex*16 :: z
+        end subroutine conj3
+        subroutine lenseqt(lnt,z,z1,z2,z3,m1,m2,m3) ! in :tricode/wei:tricode/getimt2.f
+            complex*16 :: lnt
+            complex*16 :: z
+            complex*16 :: z1
+            complex*16 :: z2
+            complex*16 :: z3
+            double precision :: m1
+            double precision :: m2
+            double precision :: m3
+        end subroutine lenseqt
+        subroutine lenseqtj(lntj,z,z1,z2,z3,m1,m2,m3) ! in :tricode/wei:tricode/getimt2.f
+            complex*16 :: lntj
+            complex*16 :: z
+            complex*16 :: z1
+            complex*16 :: z2
+            complex*16 :: z3
+            double precision :: m1
+            double precision :: m2
+            double precision :: m3
+        end subroutine lenseqtj
+        subroutine zroots3(a,m,roots,polish) ! in :tricode/wei:tricode/getimt2.f
+            complex*16 dimension(m + 1) :: a
+            integer, optional,check((len(a)-1)>=m),depend(a) :: m=(len(a)-1)
+            complex*16 dimension(m),depend(m) :: roots
+            logical :: polish
+        end subroutine zroots3
+        subroutine laguer3(ad,m,x,its) ! in :tricode/wei:tricode/getimt2.f
+            complex*16 dimension(15) :: ad
+            integer :: m
+            complex*16 :: x
+            integer :: its
+        end subroutine laguer3
+        subroutine getmag(da,db,phi,ma,mb,scx,scy,rho,magnif,lgamma,mgridsize,xorigin,yorigin,errorflag,zr) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 :: da
+            real*8 :: db
+            real*8 :: phi
+            real*8 :: ma
+            real*8 :: mb
+            real*8 :: scx
+            real*8 :: scy
+            real*8 :: rho
+            real*8 :: magnif
+            real*8 :: lgamma
+            real*8 :: mgridsize
+            real*8 :: xorigin
+            real*8 :: yorigin
+            integer :: errorflag
+            complex*16 dimension(10) :: zr
+        end subroutine getmag
+        subroutine findp(headtail,head,tail,ix,iy,parity,dimen,n,loopp,column,endl,cstart,lstart,indexs,indexe,max_sol) ! in :tricode/wei:tricode/triple_lens2.f
+            integer*4 dimension(dimen) :: headtail
+            integer*4 dimension(dimen),depend(dimen) :: head
+            integer*4 dimension(dimen),depend(dimen) :: tail
+            real*8 dimension(dimen + 1,max_sol),depend(dimen) :: ix
+            real*8 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: iy
+            integer*4 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: parity
+            integer*4, optional,check(len(headtail)>=dimen),depend(headtail) :: dimen=len(headtail)
+            integer*4 :: n
+            integer*4 :: loopp
+            integer*4 :: column
+            integer*4 :: endl
+            integer*4 :: cstart
+            integer*4 :: lstart
+            integer*4 :: indexs
+            integer*4 :: indexe
+            integer*4, optional,check(shape(ix,1)==max_sol),depend(ix) :: max_sol=shape(ix,1)
+        end subroutine findp
+        subroutine cpstring(stringx1,stringy1,stringx2,stringy2,dimen,startl1,endl1,c1,startl2,c2,max_sol) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(dimen + 1,max_sol) :: stringx1
+            real*8 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: stringy1
+            real*8 dimension((dimen+1)*max_sol,max_sol),depend(dimen,max_sol,max_sol) :: stringx2
+            real*8 dimension((dimen+1)*max_sol,max_sol),depend(dimen,max_sol,max_sol) :: stringy2
+            integer*4, optional,check((shape(stringx1,0)-1)==dimen),depend(stringx1) :: dimen=(shape(stringx1,0)-1)
+            integer*4 :: startl1
+            integer*4 :: endl1
+            integer*4 :: c1
+            integer*4 :: startl2
+            integer*4 :: c2
+            integer*4, optional,check(shape(stringx1,1)==max_sol),depend(stringx1) :: max_sol=shape(stringx1,1)
+        end subroutine cpstring
+        subroutine comp2(mx,my,mp,l1,l2,dimen,sindex,max_sol) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(dimen + 1,max_sol) :: mx
+            real*8 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: my
+            integer*4 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: mp
+            integer*4 :: l1
+            integer*4 :: l2
+            integer*4, optional,check((shape(mx,0)-1)==dimen),depend(mx) :: dimen=(shape(mx,0)-1)
+            integer*4 dimension(max_sol),depend(max_sol) :: sindex
+            integer*4, optional,check(shape(mx,1)==max_sol),depend(mx) :: max_sol=shape(mx,1)
+        end subroutine comp2
+        subroutine comp(mx,my,mp,l1,c1,l2,c2,dimen,max_sol) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(dimen + 1,max_sol) :: mx
+            real*8 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: my
+            integer*4 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: mp
+            integer*4 :: l1
+            integer*4 :: c1
+            integer*4 :: l2
+            integer*4 :: c2
+            integer*4, optional,check((shape(mx,0)-1)==dimen),depend(mx) :: dimen=(shape(mx,0)-1)
+            integer*4, optional,check(shape(mx,1)==max_sol),depend(mx) :: max_sol=shape(mx,1)
+        end subroutine comp
+        subroutine swap(mx,my,mp,l1,c1,l2,c2,dimen,max_sol) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(dimen + 1,max_sol) :: mx
+            real*8 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: my
+            integer*4 dimension(dimen + 1,max_sol),depend(dimen,max_sol) :: mp
+            integer*4 :: l1
+            integer*4 :: c1
+            integer*4 :: l2
+            integer*4 :: c2
+            integer*4, optional,check((shape(mx,0)-1)==dimen),depend(mx) :: dimen=(shape(mx,0)-1)
+            integer*4, optional,check(shape(mx,1)==max_sol),depend(mx) :: max_sol=shape(mx,1)
+        end subroutine swap
+        subroutine invshoot(xst,yst,xit,yit,x1,x2,x3,y3,q1,q2,q3) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 :: xst
+            real*8 :: yst
+            real*8 :: xit
+            real*8 :: yit
+            real*8 :: x1
+            real*8 :: x2
+            real*8 :: x3
+            real*8 :: y3
+            real*8 :: q1
+            real*8 :: q2
+            real*8 :: q3
+        end subroutine invshoot
+        subroutine inverseshoot(xst,yst,xit,yit,ddiv2,u1,u2) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 :: xst
+            real*8 :: yst
+            real*8 :: xit
+            real*8 :: yit
+            real*8 :: ddiv2
+            real*8 :: u1
+            real*8 :: u2
+        end subroutine inverseshoot
+        subroutine buildgrid(mini,maxi,origin,gridsize,gridmin,gridnum) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 :: mini
+            real*8 :: maxi
+            real*8 :: origin
+            real*8 :: gridsize
+            real*8 :: gridmin
+            integer*4 :: gridnum
+        end subroutine buildgrid
+        subroutine boundarytest(check,x1,y1,x2,y2,gstep,rho2,scx,scy,qx1,qx2,qx3,qy3,q1,q2,q3) ! in :tricode/wei:tricode/triple_lens2.f
+            integer*4 :: check
+            real*8 :: x1
+            real*8 :: y1
+            real*8 :: x2
+            real*8 :: y2
+            integer*4 :: gstep
+            real*8 :: rho2
+            real*8 :: scx
+            real*8 :: scy
+            real*8 :: qx1
+            real*8 :: qx2
+            real*8 :: qx3
+            real*8 :: qy3
+            real*8 :: q1
+            real*8 :: q2
+            real*8 :: q3
+        end subroutine boundarytest
+        subroutine crosstest(xa,ya,xb,yb,xc,yc,xd,yd,flag) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 :: xa
+            real*8 :: ya
+            real*8 :: xb
+            real*8 :: yb
+            real*8 :: xc
+            real*8 :: yc
+            real*8 :: xd
+            real*8 :: yd
+            integer*4 :: flag
+        end subroutine crosstest
+        subroutine sort(array,dimen) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(dimen) :: array
+            integer*4, optional,check(len(array)>=dimen),depend(array) :: dimen=len(array)
+        end subroutine sort
+        subroutine locate(xx,j1,n,x,j) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(n) :: xx
+            integer :: j1
+            integer, optional,check(len(xx)>=n),depend(xx) :: n=len(xx)
+            real*8 :: x
+            integer :: j
+        end subroutine locate
+        subroutine hpsorti(n,ra,rindex) ! in :tricode/wei:tricode/triple_lens2.f
+            integer*4, optional,check(len(ra)>=n),depend(ra) :: n=len(ra)
+            real*8 dimension(n) :: ra
+            integer*4 dimension(n),depend(n) :: rindex
+        end subroutine hpsorti
+        subroutine reversearray(array1,column,n,dimen,max_sol) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(dimen,max_sol) :: array1
+            integer*4 :: column
+            integer*4 :: n
+            integer*4, optional,check(shape(array1,0)==dimen),depend(array1) :: dimen=shape(array1,0)
+            integer*4, optional,check(shape(array1,1)==max_sol),depend(array1) :: max_sol=shape(array1,1)
+        end subroutine reversearray
+        subroutine stokes(rx,ry,lx,ly,n,col,area,dimen,max_sol) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(dimen*max_sol+max_sol,max_sol),depend(dimen,max_sol,max_sol) :: rx
+            real*8 dimension(dimen*max_sol+max_sol,max_sol),depend(dimen,max_sol,max_sol) :: ry
+            real*8 dimension(dimen*max_sol+max_sol,max_sol),depend(dimen,max_sol,max_sol) :: lx
+            real*8 dimension(dimen*max_sol+max_sol,max_sol),depend(dimen,max_sol,max_sol) :: ly
+            integer*4 :: n
+            integer*4 :: col
+            real*8 :: area
+            integer*4 :: dimen
+            integer*4 :: max_sol
+        end subroutine stokes
+        subroutine cp(x1,x2,y1,y2,p) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 :: x1
+            real*8 :: x2
+            real*8 :: y1
+            real*8 :: y2
+            real*8 :: p
+        end subroutine cp
+        subroutine dp(x1,x2,y1,y2,p) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 :: x1
+            real*8 :: x2
+            real*8 :: y1
+            real*8 :: y2
+            real*8 :: p
+        end subroutine dp
+        subroutine lenssolver(ixt,iyt,amt,msol,da,db,phi,ma,mb,sx,sy,magtott,mparity,max_sol,errortype,dis_max,x1,x2,x3,y3,q1,q2,q3,zr) ! in :tricode/wei:tricode/triple_lens2.f
+            real*8 dimension(max_sol) :: ixt
+            real*8 dimension(max_sol),depend(max_sol) :: iyt
+            real*8 dimension(max_sol),depend(max_sol) :: amt
+            integer :: msol
+            real*8 :: da
+            real*8 :: db
+            real*8 :: phi
+            real*8 :: ma
+            real*8 :: mb
+            real*8 :: sx
+            real*8 :: sy
+            real*8 :: magtott
+            integer dimension(max_sol),depend(max_sol) :: mparity
+            integer, optional,check(len(ixt)>=max_sol),depend(ixt) :: max_sol=len(ixt)
+            integer :: errortype
+            real*8 :: dis_max
+            real*8 :: x1
+            real*8 :: x2
+            real*8 :: x3
+            real*8 :: y3
+            real*8 :: q1
+            real*8 :: q2
+            real*8 :: q3
+            complex*16 dimension(10) :: zr
+        end subroutine lenssolver
+        subroutine getmag_wei(magbfs,magsingle,xs,ys,b,q,rhos,gamma,errorflag) ! in :tricode/wei:tricode/wei.f
+            real*8 intent(out) :: magbfs
+            real*8 intent(in) :: magsingle
+            real*8 intent(in) :: xs
+            real*8 intent(in) :: ys
+            real*8 intent(in) :: b
+            real*8 intent(in) :: q
+            real*8 intent(in) :: rhos
+            real*8 intent(in) :: gamma
+            integer intent(out) :: errorflag
+        end subroutine getmag_wei
+    end interface 
+end python module tricode/wei
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/

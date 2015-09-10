@@ -1,0 +1,56 @@
+3,12c3
+< cf2py intent(in) :: xs
+< cf2py intent(in) :: ys
+< cf2py intent(in) :: b
+< cf2py intent(in) :: q
+< cf2py intent(in) :: rhos
+< cf2py intent(in) :: gamma_lld
+< cf2py intent(out) :: errorflag
+< cf2py intent(out) :: magbps0
+< cf2py intent(out) :: magbfs
+< c     Packaging for Jins code. To be expanded to include limb-darkening.
+---
+> c     Packaging for Jin's code. To be expanded to include limb-darkening.
+20c11
+<       double precision xs_n !convert to Jins geometry
+---
+>       double precision xs_n !convert to Jin's geometry
+34d24
+<       errorflag = 0
+40a31
+>       if (errorflag .eq. -1) return !wrong caustic crossing detected
+54a46
+>             if (errorflag .eq. -1) return !wrong caustic crossing detected
+62,65d53
+<          if (magbfs .lt. 1) then
+< c            write(6,*) 'pos1 ',magbfs
+<             errorflag = -1
+<          endif
+88c76
+< c     Determine the weight of each ring based on its surface brightness.
+---
+> c     Determine the weight of each ring based on it's surface brightness.
+194a183,188
+> c         if(nsol.ne.5)then
+> c            write(6,*)'getim3 fails discovered by getmagf'
+> c            write(*,*)'nsol ',nsol
+> c            write(*,*)'nsol0 ',nsol0
+> c            stop
+> c         endif
+206,209d199
+<          if(k.ne.nsol)then
+<             write(6,*)'getim3 fails discovered by getmagf'
+< c            stop
+<          endif
+211c201
+<          if(nsol.ne.nsol0)then
+---
+>          if(nsol.ne.nsol0)then !caustic-crossing happens
+278c268
+< c                stop
+---
+>                 stop
+667c657
+<       z1 = cmplx(x1,zero)
+---
+>       z1 = cmplx(-x1,zero)

@@ -1,0 +1,5 @@
+SFITPY README
+
+09/08/2015:
+    add "find_bad.py" to identify bad data points;
+    add "getdat.rmbaddat(eventname,datfiles,data)" to remove them from the list, if available;
